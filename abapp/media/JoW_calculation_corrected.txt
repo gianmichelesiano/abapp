@@ -1,0 +1,109 @@
+A;Agriculture; 0,0308000 
+A1;Crop and animal production, hunting and related service activities; 0,0308000 
+A2;Forestry and logging ; 0,0308000 
+A3;Fishing and aquaculture ; 0,0308000 
+B;Mining and quarrying; 0,0571000 
+B5;Mining of coal and lignite ; 0,1262000 
+B6;Extraction of crude petroleum and natural gas ; 0,0564000 
+B7;Mining of metal ores ; 0,0603000 
+B8;Other mining and quarrying ; 0,0355000 
+B9;Mining support service activities; 0,0073000 
+C;Manufacturing; 0,0773208 
+C10;Manufacture of food products; 0,0737000 
+C11;Manufacture of beverages; 0,1602000 
+C12;Manufacture of tobacco products; 0,4337000 
+C13;Manufacture of textiles; 0,0343000 
+C14;Manufacture of wearing apparel ; 0,0343000 
+C15;Manufacture of leather and related products; 0,0343000 
+C16;"Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials"; 0,0589000 
+C17;Manufacture of paper and paper products; 0,0226000 
+C18;Printing and reproduction of recorded media; 0,0226000 
+C19;Manufacture of coke and refined petroleum products; 0,0629000 
+C20;Manufacture of chemicals and chemical products ; 0,0629000 
+C21;Manufacture of basic pharmaceutical products and pharmaceutical preparations ; 0,1405000 
+C22;Manufacture of rubber and plastic products ; 0,0664000 
+C23;Manufacture of other non-metallic mineral products ; 0,0351000 
+C24;Manufacture of basic metals ; 0,0351000 
+C25;Manufacture of fabricated metal products, except machinery and equipment ; 0,0351000 
+C26;Manufacture of computer, electronic and optical products; 0,1434000 
+C27;Manufacture of electrical equipment ; 0,0621000 
+C28;Manufacture of machinery and equipment n.e.c; 0,0827000 
+C29;Manufacture of motor vehicles, trailers and semi-trailers ; 0,0207000 
+C30;Manufacture of other transport equipment ; 0,0207000 
+C31;Manufacture of furniture; 0,0589000 
+C32;Other manufacturing ; 0,0773000 
+C33;Repair and installation of machinery and equipment ; 0,0773000 
+D;Electricity, gas, steam and air conditioning supply ; 0,0575000 
+D35;Electricity, gas, steam and air conditioning supply; 0,0575000 
+E;"Water supply; sewerage; waste managment and remediation activities "; 0,0781500 
+E36;Water collection, treatment and supply ; 0,1296000 
+E37;Sewerage; 0,0948000 
+E38;"Waste collection, treatment and disposal activities; materials recovery"; 0,0441000 
+E39;Remediation activities and other waste management services; 0,0441000 
+F;Construction; 0,0558000 
+F41;Construction of buildings; 0,0598000 
+F42;Civil engineering; 0,0598000 
+F43;Specialised construction activities; 0,0478000 
+G;"Wholesale and retail trade; repair of motor vehicles and motorcycles "; 0,0274667 
+G45;Wholesale and retail trade and repair of motor vehicles and motorcycles; 0,0327000 
+G46;Wholesale trade, except of motor vehicles and motorcycles; 0,0134000 
+G47;Retail trade, except of motor vehicles and motorcycles; 0,0363000 
+H;Transporting and storage ; 0,0549200 
+H49;Land transport and transport via pipelines ; 0,0549000 
+H50;Water transport ; 0,0444000 
+H51;Air transport ; 0,0703000 
+H52;Warehousing and support activities for transportation; 0,0525000 
+H53;Postal and courier activities ; 0,0525000 
+I;Accommodation and food service activities; 0,0911500 
+I55;Accomodation; 0,0825000 
+I56;Food and beverage service activities; 0,0998000 
+J;Information and communication ; 0,0674333 
+J58;Publishing activities ; 0,0145000 
+J59;Motion picture, video and television programme production, sound recording and music publishing activities; 0,0788000 
+J60;Programming and broadcasting activities; 0,0409000 
+J61;Telecommunications; 0,0772000 
+J62;Computer programming, consultancy and related activities; 0,0593000 
+J63;Information service activities; 0,1339000 
+K;Financial and insurance activities ; 0,1643000 
+K64;Financial service activities, except insurance and pension funding ; 0,2413000 
+K65; Insurance, reinsurance and pension funding, except compulsory social security ; 0,0442000 
+K66;Activities auxiliary to financial services and insurance activities; 0,2074000 
+L;Real estate activities; 0,0921000 
+L68;Real estate activities; 0,0921000 
+M;Professional, scientific and technical activities; 0,0372000 
+M69;Legal and accounting activities ; 0,0372000 
+M70;"Activities of head offices; management consultancy activities"; 0,0372000 
+M71;"Architectural and engineering activities; technical testing and analysis"; 0,0199000 
+M72;Scientific research and development; 0,0372000 
+M73;Advertising and market research; 0,0545000 
+M74;Other professional, scientific and technical activities ; 0,0372000 
+M75;Veterinary activities ; 0,0372000 
+N;Administrative and support service activities ; 0,0225000 
+N77;Rental and leasing activities ; 0,0225000 
+N78;Employment activities ; 0,0225000 
+N79;Travel agency, tour operator and other reservation service and related activities; 0,0225000 
+N80;Security and investigation activities ; 0,0225000 
+N81;Services to buildings and landscape activities; 0,0225000 
+N82;Office administrative, office support and other business support activities; 0,0225000 
+O;"Public administration and defence; compulsory social security "; 0,0722000 
+O84;"Public administration and defence; compulsory social security"; 0,0722000 
+P;Education ; 0,0138000 
+P85;Education ; 0,0138000 
+Q;Human health and social work activities; 0,0192333 
+Q86;Human health activities ; 0,0061000 
+Q87;Residential care activities ; 0,0258000 
+Q88;Social work activities without accommodation; 0,0258000 
+R;Arts, entertainment and recreation; 0,0798250 
+R90;Creative, arts and entertainment activities; 0,1150000 
+R91;Libraries, archives, museums and other cultural activities; 0,0212000 
+R92;Gambling and betting activities; 0,1150000 
+R93;Sports activities and amusement and recreation activities; 0,0681000 
+S;Other services activities ; 0,0519000 
+S94;Activities of membership organisations; 0,0519000 
+S95;Repair of computers and communication equipment ; 0,0519000 
+S96;Other personal service activities; 0,0519000 
+T;"Activities of households as employers; undifferentiated goods - and services - producing activities of households for own use"; not available 
+T97;Activities of households as employers of domestic personnel; not available 
+T98;Undifferentiated goods- and services-producing activities of private households for own use ; not available 
+U;Activities of extraterritorial organisations and bodies ; not available 
+U99;Activities of extraterritorial organisations and bodies ; not available 
