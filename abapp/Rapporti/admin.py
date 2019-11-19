@@ -1,14 +1,14 @@
 from material.admin.options import MaterialModelAdmin
 from material.admin.decorators import register
 
-from Rapporti.models import TableABC, Relazione
+from Rapporti.models import AnalisiFunzionale, Relazione
 
 from material.admin.sites import site
 
 
 
 @register(Relazione)
-class MaterialTableABCAdmin(MaterialModelAdmin):
+class MaterialRelazioneAdmin(MaterialModelAdmin):
     list_display = ('specialista', 'data_creazione',)
     icon_name = 'crop_portrait'
 
@@ -23,8 +23,8 @@ class MaterialTableABCAdmin(MaterialModelAdmin):
         obj.save()
 
 
-@register(TableABC)
-class MaterialTableABCAdmin(MaterialModelAdmin):
+@register(AnalisiFunzionale)
+class MaterialAnalisiFunzionaleAdmin(MaterialModelAdmin):
     list_display = ('specialista', 'data_creazione','comportamento',)
     icon_name = 'warning'
 

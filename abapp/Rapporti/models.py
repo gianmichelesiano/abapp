@@ -11,17 +11,18 @@ class Relazione(models.Model):
         verbose_name_plural = 'Relazioni'
 
 
-class TableABC(models.Model):
+
+class AnalisiFunzionale(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
-    antecedente = models.CharField(max_length=200, blank=True)
-    comportamento = models.CharField(max_length=200)
-    conseguenza = models.CharField(max_length=200, blank=True)
-    funzione = models.CharField(max_length=200, blank=True)
+    antecedente = models.CharField(max_length=500, blank=True)
+    comportamento = models.CharField(max_length=500)
+    conseguenza = models.CharField(max_length=500, blank=True)
+    reazione = models.CharField(max_length=500, blank=True)
 
     class Meta:
-        verbose_name = 'Incidente'
-        verbose_name_plural = 'Incidenti'
+        verbose_name = 'Analisi Funzionale'
+        verbose_name_plural = 'Analisi Funzionale'
 
     def __str__(self):
         return self.specialista.username
