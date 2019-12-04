@@ -66,7 +66,7 @@ class Migration(migrations.Migration):
                 ('domanda', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='programmazione.Domande')),
                 ('programma', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='programmazione.Programma')),
                 ('prova', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='programmazione.Prova')),
-                ('rinforzo', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Rapporti.Rinforzo')),
+                ('rinforzo', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Rapporti.Rinforzi')),
             ],
             options={
                 'verbose_name': 'Esercizio',
