@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-from Rapporti.models import Rinforzo
+from Rapporti.models import Rinforzi
 
 
 class Prova(models.Model):
@@ -48,7 +48,7 @@ class Esercizi(models.Model):
     programma =  models.ForeignKey(Programma, on_delete=models.CASCADE)
     prova =  models.OneToOneField(Prova, on_delete=models.CASCADE)
     domanda = models.ForeignKey(Domande, on_delete=models.CASCADE)
-    rinforzo = models.ForeignKey(Rinforzo, on_delete=models.CASCADE)
+    rinforzo = models.ForeignKey(Rinforzi, on_delete=models.CASCADE)
 
     risposta = models.CharField(
                     max_length=2,

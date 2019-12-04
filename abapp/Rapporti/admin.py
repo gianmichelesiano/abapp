@@ -1,13 +1,13 @@
 from material.admin.options import MaterialModelAdmin
 from material.admin.decorators import register
 
-from Rapporti.models import AnalisiFunzionale, Relazione, Rinforzo
+from Rapporti.models import AnalisiFunzionali, Relazioni, Rinforzi
 
 from material.admin.sites import site
 
 
 
-@register(Relazione)
+@register(Relazioni)
 class MaterialRelazioneAdmin(MaterialModelAdmin):
     list_display = ('specialista', 'data_creazione',)
     icon_name = 'crop_portrait'
@@ -23,7 +23,7 @@ class MaterialRelazioneAdmin(MaterialModelAdmin):
         obj.save()
 
 
-@register(AnalisiFunzionale)
+@register(AnalisiFunzionali)
 class MaterialAnalisiFunzionaleAdmin(MaterialModelAdmin):
     list_display = ('specialista', 'data_creazione','comportamento',)
     icon_name = 'warning'
@@ -38,7 +38,7 @@ class MaterialAnalisiFunzionaleAdmin(MaterialModelAdmin):
         obj.specialista = request.user
         obj.save()
 
-@register(Rinforzo)
+@register(Rinforzi)
 class MaterialRinforzoAdmin(MaterialModelAdmin):
     list_display = ('rinforzo', 'tipologia','specialista',)
     exclude  = ['data_creazione', 'specialista']

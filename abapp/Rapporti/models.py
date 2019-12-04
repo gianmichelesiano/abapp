@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Relazione(models.Model):
+class Relazioni(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
     relazione = models.TextField()
@@ -11,7 +11,7 @@ class Relazione(models.Model):
         verbose_name_plural = 'Relazioni'
 
 
-class Rinforzo(models.Model):
+class Rinforzi(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
     rinforzo = models.CharField(max_length=100)
@@ -33,9 +33,9 @@ class Rinforzo(models.Model):
 
     def __str__(self):
         return self.rinforzo
-        
 
-class AnalisiFunzionale(models.Model):
+
+class AnalisiFunzionali(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
     antecedente = models.CharField(max_length=500, blank=True)
