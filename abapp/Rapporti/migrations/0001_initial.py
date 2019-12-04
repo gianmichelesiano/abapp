@@ -25,8 +25,9 @@ class Migration(migrations.Migration):
                 ('specialista', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'verbose_name': 'Rinforzo',
                 'verbose_name_plural': 'Rinforzi',
+                'verbose_name': 'Rinforzo',
+
             },
         ),
         migrations.CreateModel(
