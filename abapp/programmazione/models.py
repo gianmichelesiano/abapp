@@ -1,8 +1,31 @@
 from django.db import models
 from django.utils import timezone
 
-from Rapporti.models import Rinforzi
+#from programmazione.models import Rinforzi
 
+
+class Rinforzi(models.Model):
+    specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    data_creazione = models.DateTimeField(default=timezone.now)
+    rinforzo = models.CharField(max_length=100)
+    tipologia = models.CharField(
+                    max_length=2,
+                    choices=[
+                        ('NN', ''),
+                        ('CI', 'Cibo'),
+                        ('GI', 'Gioco'),
+                        ('EL', 'Elettronico'),
+                        ('OG', 'Oggetto generico'),
+                        ('AL', 'Altro'),
+                    ],
+                    default='Cibo',
+    )   
+    class Meta:
+        verbose_name = 'Rinforzo'
+        verbose_name_plural = 'Rinforzi'
+
+    def __str__(self):
+        return self.rinforzo
 
 class Prova(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)

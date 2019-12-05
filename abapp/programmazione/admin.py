@@ -5,13 +5,22 @@ from django.contrib import admin
 
 from material.admin.sites import site
 
-from programmazione.models import Esercizi, Prova, Programma,Domande
+from programmazione.models import Esercizi, Prova, Programma,Domande, Rinforzi
 
 from .forms import EserciziAdminForm
 
 class InLineEsercizi(admin.TabularInline):
     model = Esercizi
     extra = 1
+
+@register(Rinforzi)
+class MaterialRinforzoAdmin(MaterialModelAdmin):
+    list_display = ('rinforzo', 'tipologia','specialista',)
+    exclude  = ['data_creazione', 'specialista']
+    icon_name = 'local_pharmacy'
+
+    list_per_page = 25
+
 
 @register(Programma)
 class ProgrammaAdmin(MaterialModelAdmin):

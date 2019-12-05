@@ -1,7 +1,7 @@
 from material.admin.options import MaterialModelAdmin
 from material.admin.decorators import register
 
-from Rapporti.models import AnalisiFunzionali, Relazioni, Rinforzi
+from Rapporti.models import AnalisiFunzionali, Relazioni
 
 from material.admin.sites import site
 
@@ -38,13 +38,6 @@ class MaterialAnalisiFunzionaleAdmin(MaterialModelAdmin):
         obj.specialista = request.user
         obj.save()
 
-@register(Rinforzi)
-class MaterialRinforzoAdmin(MaterialModelAdmin):
-    list_display = ('rinforzo', 'tipologia','specialista',)
-    exclude  = ['data_creazione', 'specialista']
-    icon_name = 'local_pharmacy'
-
-    list_per_page = 25
 
 
     def save_model(self, request, obj, form, change):
