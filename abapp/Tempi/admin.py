@@ -31,10 +31,10 @@ class MaterialConteggioOrarioAdmin(MaterialModelAdmin):
         data_creazione__lt = request.GET.get('data_creazione__lt')
 
 
-        cont = ConteggioOrario.objects.filter(data_creazione__range =(data_creazione__gte, data_creazione__lt)).aggregate(tot=Sum('ore'))['tot']
-        print(cont)
-
-        total  =ConteggioOrario.objects.filter(data_creazione__range =(data_creazione__gte, data_creazione__lt)).aggregate(tot=Sum('ore'))['tot']
+        if data_creazione__gte != None and data_creazione__lt  != None:
+            total  =ConteggioOrario.objects.filter(data_creazione__range =(data_creazione__gte, data_creazione__lt)).aggregate(tot=Sum('ore'))['tot']
+        else:
+            total  =ConteggioOrario.objects.all().aggregate(tot=Sum('ore'))['tot']
 
 
         #total = ConteggioOrario.objects.all().aggregate(tot=Sum('ore'))['tot']
