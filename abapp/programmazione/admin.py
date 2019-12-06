@@ -56,6 +56,25 @@ class ProveAdmin(MaterialModelAdmin):
         obj.save()
 
 
+@register(Domande)
+class DomandeAdmin(MaterialModelAdmin):
+    list_display = ('specialista', 'data_creazione', 'domanda',)
+    icon_name = 'help_outline'
+
+    exclude  = ['specialista',  'data_creazione']
+    list_per_page = 25
+
+    list_filter = ( 'specialista',  'data_creazione',)
+
+    def save_model(self, request, obj, form, change):
+        obj.specialista = request.user
+        obj.save()
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
 
 
 """
@@ -79,25 +98,7 @@ class EserciziAdmin(MaterialModelAdmin):
             del actions['delete_selected']
         return actions
 
-@register(Domande)
-class DomandeAdmin(MaterialModelAdmin):
-    list_display = ('specialista', 'data_creazione', 'domanda',)
-    icon_name = 'help_outline'
 
-    exclude  = ['specialista',  'data_creazione']
-    list_per_page = 25
-
-    list_filter = ( 'specialista',  'data_creazione',)
-
-    def save_model(self, request, obj, form, change):
-        obj.specialista = request.user
-        obj.save()
-
-    def get_actions(self, request):
-        actions = super().get_actions(request)
-        if 'delete_selected' in actions:
-            del actions['delete_selected']
-        return actions
 """
 
 
