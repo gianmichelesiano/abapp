@@ -1,11 +1,13 @@
 from django.db import models 
 from django.utils import timezone
+from tinymce.models import HTMLField
 
 
 class Relazioni(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
     relazione = models.TextField()
+    feedback = models.TextField()
     class Meta:
         verbose_name = 'Relazione'
         verbose_name_plural = 'Relazioni'

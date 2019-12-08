@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.conf.urls.static import static # new
 from django.conf import settings # new
 from material.admin.sites import site
+from django.conf.urls import url
 
 # optional
 ###################################################

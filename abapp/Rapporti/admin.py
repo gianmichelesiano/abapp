@@ -4,12 +4,14 @@ from material.admin.decorators import register
 from Rapporti.models import AnalisiFunzionali, Relazioni
 
 from material.admin.sites import site
+from .form import RelazioniForm
 
 
 
 @register(Relazioni)
 class MaterialRelazioneAdmin(MaterialModelAdmin):
     list_display = ('specialista', 'data_creazione',)
+    form = RelazioniForm
     icon_name = 'crop_portrait'
 
     exclude  = ['specialista']
