@@ -6,8 +6,8 @@ from tinymce.models import HTMLField
 class Relazioni(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
-    relazione = models.TextField()
-    feedback = models.TextField()
+    relazione = models.TextField(blank=True)
+    feedback = models.TextField(blank=True)
     class Meta:
         verbose_name = 'Relazione'
         verbose_name_plural = 'Relazioni'
