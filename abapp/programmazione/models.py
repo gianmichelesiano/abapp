@@ -69,9 +69,9 @@ class Domande(models.Model):
 
 class Esercizi(models.Model):
     programma =  models.ForeignKey(Programma, on_delete=models.CASCADE)
-    prova =  models.OneToOneField(Prova, on_delete=models.CASCADE)
-    domanda = models.ForeignKey(Domande, on_delete=models.CASCADE)
-    rinforzo = models.ForeignKey(Rinforzi, on_delete=models.CASCADE)
+    prova =  models.ForeignKey(Prova, on_delete=models.CASCADE)
+    domanda = models.ManyToManyField(Domande)
+    rinforzo = models.ManyToManyField(Rinforzi)
 
     risposta = models.CharField(
                     max_length=2,
@@ -90,6 +90,12 @@ class Esercizi(models.Model):
                         (3, 3),
                         (4, 4),
                         (5, 5),
+                        (6, 6),
+                        (7, 7),
+                        (8, 8),
+                        (9, 9),
+                        (10, 10),
+
                     ],
     )
 
