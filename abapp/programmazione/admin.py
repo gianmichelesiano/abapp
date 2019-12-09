@@ -20,7 +20,9 @@ class MaterialRinforzoAdmin(MaterialModelAdmin):
     icon_name = 'local_pharmacy'
 
     list_per_page = 25
-
+    def save_model(self, request, obj, form, change):
+        obj.specialista = request.user
+        obj.save()
 
 @register(Programma)
 class ProgrammaAdmin(MaterialModelAdmin):
