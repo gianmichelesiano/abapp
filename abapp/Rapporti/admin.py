@@ -10,7 +10,7 @@ from .form import RelazioniForm
 
 @register(Relazioni)
 class MaterialRelazioneAdmin(MaterialModelAdmin):
-    list_display = ('specialista', 'data_creazione',)
+    list_display = ('specialista', 'data_creazione','relazione')
     form = RelazioniForm
     icon_name = 'crop_portrait'
 

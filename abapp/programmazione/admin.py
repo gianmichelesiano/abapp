@@ -9,7 +9,7 @@ from programmazione.models import Esercizi, Prova, Programma,Domande, Rinforzi
 
 from .forms import EserciziAdminForm
 
-class InLineEsercizi(admin.TabularInline):
+class InLineEsercizi(admin.StackedInline):
     model = Esercizi
     extra = 1
 
