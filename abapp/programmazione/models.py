@@ -99,9 +99,9 @@ class Esercizi(models.Model):
 
     corretto = models.IntegerField(choices=VOLTE, default=0)
     promt = models.IntegerField(choices=VOLTE, default=0)
-    promt_indicativo = models.IntegerField(choices, default=0)
-    promt_fisico = models.IntegerField(choices, default=0)
-    non_corretto = models.IntegerField(choices, default=0)
+    promt_indicativo = models.IntegerField(choices=VOLTE, default=0)
+    promt_fisico = models.IntegerField(choices=VOLTE, default=0)
+    non_corretto = models.IntegerField(choices=VOLTE, default=0)
 
     class Meta:
         verbose_name = 'Esercizio'
