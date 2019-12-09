@@ -5,6 +5,7 @@ from django.utils import timezone
 
 
 VOLTE =[
+    (0, 0),
     (1, 1),
     (2, 2),
     (3, 3),
@@ -91,16 +92,16 @@ class Domande(models.Model):
         return self.domanda
 
 class Esercizi(models.Model):
-    programma =  models.ForeignKey(Programma, on_delete=models.CASCADE)
-    prova =  models.ForeignKey(Prova, on_delete=models.CASCADE)
+    programma = models.ForeignKey(Programma, on_delete=models.CASCADE)
+    prova = models.ForeignKey(Prova, on_delete=models.CASCADE)
     domanda = models.ManyToManyField(Domande)
     rinforzo = models.ManyToManyField(Rinforzi)
 
-    corretto = models.IntegerField(choices=VOLTE)
-    promt = models.IntegerField(choices=VOLTE)
-    promt_indicativo = models.IntegerField(choices=VOLTE)
-    promt_fisico = models.IntegerField(choices=VOLTE)
-    non_corretto = models.IntegerField(choices=VOLTE)
+    corretto = models.IntegerField(choices=VOLTE, default=0)
+    promt = models.IntegerField(choices=VOLTE, default=0)
+    promt_indicativo = models.IntegerField(choices, default=0)
+    promt_fisico = models.IntegerField(choices, default=0)
+    non_corretto = models.IntegerField(choices, default=0)
 
     class Meta:
         verbose_name = 'Esercizio'
