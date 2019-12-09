@@ -4,6 +4,29 @@ from django.utils import timezone
 #from programmazione.models import Rinforzi
 
 
+VOLTE =[
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6),
+    (7, 7),
+    (8, 8),
+    (9, 9),
+    (10, 10),
+    (11, 11),
+    (12, 12),
+    (13, 13),
+    (14, 14),
+    (15, 15),
+    (16, 16),
+    (17, 17),
+    (18, 18),
+    (19, 19),
+    (20, 20),
+]
+
 class Rinforzi(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
@@ -73,37 +96,11 @@ class Esercizi(models.Model):
     domanda = models.ManyToManyField(Domande)
     rinforzo = models.ManyToManyField(Rinforzi)
 
-    risposta = models.CharField(
-                    max_length=2,
-                    choices=[
-                        ('NN', ''),
-                        ('C', 'C'),
-                        ('NC', 'NC'),
-                        ('P', 'P'),
-                        ('PF', 'PF'),
-                        ('PI', 'PI'),
-                    ],
-    )
-    numero_di_volte = models.IntegerField(
-                    choices=[
-                        (1, 1),
-                        (2, 2),
-                        (3, 3),
-                        (4, 4),
-                        (5, 5),
-                        (6, 6),
-                        (7, 7),
-                        (8, 8),
-                        (9, 9),
-                        (10, 10),
-                        (11, 11),
-                        (12, 12),
-                        (13, 13),
-                        (14, 14),
-                        (15, 15),
-
-                    ],
-    )
+    corretto = models.IntegerField(choices=VOLTE)
+    promt = models.IntegerField(choices=VOLTE)
+    promt_indicativo = models.IntegerField(choices=VOLTE)
+    promt_fisico = models.IntegerField(choices=VOLTE)
+    non_corretto = models.IntegerField(choices=VOLTE)
 
     class Meta:
         verbose_name = 'Esercizio'
