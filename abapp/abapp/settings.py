@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'Tempi',
     'documenti',   
     'programmazione',
+    'chartit',
+    'chartitApp.apps.ChartitappConfig',
+
 ]
 
 

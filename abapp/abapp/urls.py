@@ -28,6 +28,7 @@ site.favicon = staticfiles('path/to/favicon')
 urlpatterns = [
     path('', include('material.admin.urls')),
     path('admin/', include('material.admin.urls')),
+    path('chart/', include('chartitApp.urls')),
 ]
 
 if settings.DEBUG: # new

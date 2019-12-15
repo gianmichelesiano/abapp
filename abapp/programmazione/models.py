@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-#from programmazione.models import Rinforzi
+# from programmazione.models import Rinforzi
 
 
 VOLTE =[
@@ -28,6 +28,7 @@ VOLTE =[
     (20, 20),
 ]
 
+
 class Rinforzi(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data_creazione = models.DateTimeField(default=timezone.now)
@@ -43,7 +44,8 @@ class Rinforzi(models.Model):
                         ('AL', 'Altro'),
                     ],
                     default='Cibo',
-    )   
+    )  
+
     class Meta:
         verbose_name = 'Rinforzo'
         verbose_name_plural = 'Rinforzi'
@@ -51,12 +53,13 @@ class Rinforzi(models.Model):
     def __str__(self):
         return self.rinforzo
 
+
 class Prova(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    titolo =  models.CharField(max_length=50, blank=True)
-    obiettivo =  models.CharField(max_length=50, blank=True)
-    procedura =  models.CharField(max_length=50, blank=True)
-    attivo  = models.BooleanField(default=False)
+    titolo = models.CharField(max_length=50, blank=True)
+    obiettivo = models.CharField(max_length=50, blank=True)
+    procedura = models.CharField(max_length=50, blank=True)
+    attivo = models.BooleanField(default=False)
     data_creazione = models.DateTimeField(default=timezone.now)
 
     class Meta:
@@ -69,14 +72,12 @@ class Prova(models.Model):
 
 class Programma(models.Model):
     specialista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    #titolo =  models.CharField(max_length=50, blank=True)
+    # titolo =  models.CharField(max_length=50, blank=True)
     data_creazione = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name = 'Programma'
         verbose_name_plural = 'Programmi'
-
-
 
 
 class Domande(models.Model):
@@ -90,6 +91,7 @@ class Domande(models.Model):
 
     def __str__(self):
         return self.domanda
+
 
 class Esercizi(models.Model):
     programma = models.ForeignKey(Programma, on_delete=models.CASCADE)
