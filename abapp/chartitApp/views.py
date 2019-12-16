@@ -1,7 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from .models import SalesReport
-from programmazione.models import Esercizi
+from programmazione.models import Esercizi, Programma, Prova
 from chartit import DataPool, Chart, PivotDataPool, PivotChart
 """
 from .models import SalesReport, MonthlyWeatherByCity, SalesHistory
@@ -19,23 +19,24 @@ def home(request):
 def prove(request):
 
     inizio = request.GET['inizio'] # => [39]
-    fine = request.GET['fine'] # => [137] 
-    print ("inizio")
-    print (inizio)
-    print ("fine")
-    print (fine)
+    fine = request.GET['fine'] # => [137]
+    prova_sel =  request.GET['prova']
+    #p = Esercizi.objects.select_related('programma','prova').filter( programma__data_creazione__range =[inizio, fine]).filter(prova__id = prova_sel)
 
-
-
+    provaTitolo = Prova.objects.filter(id=prova_sel).values('titolo').last()
+    print(provaTitolo['titolo'])
+    source = Esercizi.objects.select_related('programma').filter( programma__data_creazione__range =[inizio, fine]).filter(prova__id = prova_sel)
     sales = DataPool(
             series=[{
                 'options': {
-                    'source': SalesReport.objects.all()
+                    'source': source
                 },
                 'terms': [
-                    'month',
-                    'sales',
-                    'id',
+                    'programma__data_creazione',
+                    'corretto',
+                    'promt_indicativo',
+                    'promt_fisico',
+                    'non_corretto',
                 ]
             }]
     )
@@ -55,20 +56,33 @@ def prove(request):
                     'stack': 0
                 },
                 'terms': {
-                    'month': [
-                        'sales',
+                    'programma__data_creazione': [
+                        'corretto',
 
                         {
-                            'id': {
+                            'promt_indicativo': {
                                 'stack': 1
                             }
                         },
+
+                        {
+                            'promt_fisico': {
+                                'stack': 2
+                            }
+                        },
+
+                        {
+                            'non_corretto': {
+                                'stack': 3
+                            }
+                        },
+                    
                     ]
                 }
             }],
             chart_options =
               {'title': {
-                   'text': 'Risultati'},
+                   'text': provaTitolo['titolo']},
                'xAxis': {
                    'title':{'text': 'Data'}},
                'yAxis': {
@@ -78,7 +92,8 @@ def prove(request):
                 'credits': {
                     'enabled': True}},
                    
-            x_sortf_mapf_mts=(None, monthname, False))  
+            #x_sortf_mapf_mts=(None, monthname, False)
+            )  
     
     return render(request,'prove.html', 
         {'chart_list': [cht]})
@@ -88,8 +103,7 @@ def sales(request):
 
     inizio = request.GET['inizio'] # => [39]
     fine = request.GET['fine'] # => [137] 
-    print ("inizio")
-    print (inizio)
+
 
     sales = DataPool(
         series=

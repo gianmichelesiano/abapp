@@ -29,64 +29,44 @@
       <input type="hidden" name="csrfmiddlewaretoken" value="iBhGJclNNVbX9Hvc60UDt7GIuGtcl1qbem1hJOcCVNFo25JNAV478n7Gj5dWZck0">
       
       <div>
-        
-        
-        
-        
-        <div class="module indent">
-          
-<link rel="stylesheet" href="/static/material/admin/css/additional_submit_line.min.css">
-
-
-
-    <fieldset class="module aligned ">
-  
-  
-  
-    <div class="form-row field-inizio">
-      
-      
-        <div class="input-field">
-          
-          
+        <div class="module indent"> 
+          <link rel="stylesheet" href="/static/material/admin/css/additional_submit_line.min.css">
+          <fieldset class="module aligned ">
+          <div class="form-row field-inizio">
+            <div class="input-field">
             <label class="required" for="id_inizio"></label>
-            
               <div class="date-input date-block">
-    <div class="modal datepicker-modal" id="modal-38088600-7b6d-593b-d8bd-eb0d19593804" tabindex="0"><div class="modal-content datepicker-container"><div class="datepicker-date-display"><span class="year-text"></span><span class="date-text"></span></div><div class="datepicker-calendar-container"><div class="datepicker-calendar"></div><div class="datepicker-footer"><button class="btn-flat datepicker-clear waves-effect" style="" type="button">Svuota</button><div class="confirmation-btns"><button class="btn-flat datepicker-cancel waves-effect" type="button">Cancel</button><button class="btn-flat datepicker-done waves-effect" type="button">Ok</button></div></div></div></div></div><input id="id_inizio" type="text" name="inizio" class="datepicker" value="">
-    Data Inizio
-</div>
-<div class="time-difference"></div>
-            
-          
-          
+            <div class="modal datepicker-modal" id="modal-38088600-7b6d-593b-d8bd-eb0d19593804" tabindex="0"><div class="modal-content datepicker-container"><div class="datepicker-date-display"><span class="year-text"></span><span class="date-text"></span></div><div class="datepicker-calendar-container"><div class="datepicker-calendar"></div><div class="datepicker-footer"><button class="btn-flat datepicker-clear waves-effect" style="" type="button">Svuota</button><div class="confirmation-btns"><button class="btn-flat datepicker-cancel waves-effect" type="button">Cancel</button><button class="btn-flat datepicker-done waves-effect" type="button">Ok</button></div></div></div></div></div><input id="id_inizio" type="text" name="inizio" class="datepicker" value="">
+            Data Inizio
         </div>
-      
+        <div class="time-difference"></div>
+        </div>
     </div>
   
-    <div class="form-row field-fine">
-      
-      
+
+
+    <div class="form-row field-fine">  
         <div class="input-field">
-          
-          
             <label class="required" for="id_fine"></label>
-            
               <div class="date-input date-block">
-    <div class="modal datepicker-modal" id="modal-232df95c-a29c-c2e1-b63c-21e81ca1a9e0" tabindex="0"><div class="modal-content datepicker-container"><div class="datepicker-date-display"><span class="year-text"></span><span class="date-text"></span></div><div class="datepicker-calendar-container"><div class="datepicker-calendar"></div><div class="datepicker-footer"><button class="btn-flat datepicker-clear waves-effect" style="" type="button">Svuota</button><div class="confirmation-btns"><button class="btn-flat datepicker-cancel waves-effect" type="button">Cancel</button><button class="btn-flat datepicker-done waves-effect" type="button">Ok</button></div></div></div></div></div><input id="id_fine" type="text" name="fine" class="datepicker" value="">
-    Data Fine
-</div>
-<div class="time-difference"></div>
-            
-          
-          
-        </div>
-      
+            <div class="modal datepicker-modal" id="modal-232df95c-a29c-c2e1-b63c-21e81ca1a9e0" tabindex="0"><div class="modal-content datepicker-container"><div class="datepicker-date-display"><span class="year-text"></span><span class="date-text"></span></div><div class="datepicker-calendar-container"><div class="datepicker-calendar"></div><div class="datepicker-footer"><button class="btn-flat datepicker-clear waves-effect" style="" type="button">Svuota</button><div class="confirmation-btns"><button class="btn-flat datepicker-cancel waves-effect" type="button">Cancel</button><button class="btn-flat datepicker-done waves-effect" type="button">Ok</button></div></div></div></div></div><input id="id_fine" type="text" name="fine" class="datepicker" value="">
+        Data Fine
     </div>
-  
+    <div class="time-difference"></div>
+        </div> 
+    </div>
+
+    <div>  
+    <select name="prova">
+    {% for prova in prove %}
+        <option value="{{prova.id}}">{{prova.titolo}}</option>
+    {% endfor %}
+    </select>
+  </div>
+
 </fieldset>
 
-            
-
+          
 <link rel="stylesheet" href="/static/material/admin/css/submit_line.min.css">
 
 <div class="submit-row">
