@@ -3,11 +3,13 @@ from django.http import HttpResponse
 from .models import SalesReport
 from programmazione.models import Esercizi, Programma, Prova
 from chartit import DataPool, Chart, PivotDataPool, PivotChart
-"""
-from .models import SalesReport, MonthlyWeatherByCity, SalesHistory
-from chartit import DataPool, Chart, PivotDataPool, PivotChart
-from django.db.models import Avg, Sum, Count, Min, Max
-"""
+from django.utils import timezone
+import pytz
+
+
+def one_nonths_hence():
+    return timezone.now() - timezone.timedelta(days=365)
+
 
 
 def home(request):
@@ -21,6 +23,18 @@ def prove(request):
     inizio = request.GET['inizio'] # => [39]
     fine = request.GET['fine'] # => [137]
     prova_sel =  request.GET['prova']
+
+    if inizio == '':
+        print('X')
+        inizio =  str(one_nonths_hence()).split(' ')[0]
+        #inizio = str(inizio).split(' ')[0]
+        print(inizio)
+    
+    if fine == '':
+        print('Y')
+        fine =  str(timezone.now()).split(' ')[0]
+        #fine = str(fine).split(' ')[0]
+        print(type(fine))
     #p = Esercizi.objects.select_related('programma','prova').filter( programma__data_creazione__range =[inizio, fine]).filter(prova__id = prova_sel)
 
     provaTitolo = Prova.objects.filter(id=prova_sel).values('titolo').last()
