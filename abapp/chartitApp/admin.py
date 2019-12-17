@@ -15,7 +15,8 @@ class MaterialSalesReportAdmin(MaterialModelAdmin):
 @register(CreateGraph)
 class MaterialCreateGraphAdmin(MaterialModelAdmin):
     #list_display = ('inizio', 'fine', 'prova',)
-
+    icon_name = 'insert_chart'
+    name = 'Risultati programmazione'
     change_list_template = 'admin/chartitApp/chartitApp_change_list.html'
 
     

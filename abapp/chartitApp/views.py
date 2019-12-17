@@ -39,7 +39,7 @@ def prove(request):
 
     provaTitolo = Prova.objects.filter(id=prova_sel).values('titolo').last()
     print(provaTitolo['titolo'])
-    source = Esercizi.objects.select_related('programma').filter( programma__data_creazione__range =[inizio, fine]).filter(prova__id = prova_sel)
+    source = Esercizi.objects.select_related('programma').filter( programma__data_creazione__range =[inizio, fine]).filter(prova__id = prova_sel).order_by('-programma__data_creazione')
     sales = DataPool(
             series=[{
                 'options': {
@@ -54,13 +54,12 @@ def prove(request):
                 ]
             }]
     )
-
-
-    def monthname(month_num):
-        names = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun',
-             7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'}
-        return names[month_num]         
+   
     #Step 2: Create the Chart object
+    def formatXDate(input):
+        formatedDate = input.strftime("%d-%m-%Y")
+        return formatedDate  
+
     cht = Chart(
             datasource = sales,
             series_options=[{
@@ -106,7 +105,7 @@ def prove(request):
                 'credits': {
                     'enabled': True}},
                    
-            #x_sortf_mapf_mts=(None, monthname, False)
+            x_sortf_mapf_mts=(None, formatXDate, False)
             )  
     
     return render(request,'prove.html', 
