@@ -19,8 +19,10 @@
     {{ chart_list|load_charts:"cht" }}
 </head>
 <body>
+    {% comment %} <a href="{% url 'admin:chartitApp_change_list' %}">Nuovo Grafico</a> {% endcomment %}
     <div id='cht' style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">  </div>
     <hr>
+    
     {% comment %} <div id='cht2' style="min-width: 400px; height: 400px; max-width: 600px; margin: 0 auto">  </div> {% endcomment %}
 </body>
 </html>

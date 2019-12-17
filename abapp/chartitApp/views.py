@@ -20,8 +20,20 @@ def home(request):
 
 def prove(request):
 
-    inizio = request.GET['inizio'] # => [39]
-    fine = request.GET['fine'] # => [137]
+    if request.method == 'GET' and 'inizio' in request.GET:
+        inizio = request.GET['inizio']
+    else:
+        inizio =  str(one_nonths_hence()).split(' ')[0]
+
+    if request.method == 'GET' and 'fine' in request.GET:
+        fine = request.GET['fine']
+    else:
+        fine =  str(one_nonths_hence()).split(' ')[0]
+
+    if request.method == 'GET' and 'fine' in request.GET:
+        fine = request.GET['fine']
+    else:
+        fine =  str(one_nonths_hence()).split(' ')[0]
     prova_sel =  request.GET['prova']
 
     if inizio == '':
