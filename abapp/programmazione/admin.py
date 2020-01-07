@@ -28,7 +28,11 @@ class MaterialRinforzoAdmin(MaterialModelAdmin):
 @register(Programma)
 class ProgrammaAdmin(MaterialModelAdmin):
     inlines = [InLineEsercizi]
-    list_display = ('specialista' ,'data_creazione',)
+
+    def Data_Creazione(self, obj):
+        return obj.data_creazione.strftime("%d-%m-%Y")
+
+    list_display = ('specialista' ,'Data_Creazione',)
 
     icon_name = 'list_alt'
     exclude  = ['specialista']
@@ -61,7 +65,11 @@ class ProveAdmin(MaterialModelAdmin):
 
 @register(Domande)
 class DomandeAdmin(MaterialModelAdmin):
-    list_display = ('specialista', 'data_creazione', 'domanda',)
+    def Data_Creazione(self, obj):
+        return obj.data_creazione.strftime("%d-%m-%Y")
+
+    list_display = ('specialista', 'Data_Creazione', 'domanda',)
+
     icon_name = 'help_outline'
 
     exclude  = ['specialista',  'data_creazione']
@@ -80,29 +88,7 @@ class DomandeAdmin(MaterialModelAdmin):
         return actions
 
 
-"""
-@register(Esercizi)
-class EserciziAdmin(MaterialModelAdmin):
-    list_display = ('specialista', 'data_creazione', 'domanda', 'rinforzo', 'risposta')
-    icon_name = 'question_answer'
 
-    exclude  = ['specialista']
-    list_per_page = 25
-
-    #list_filter = ( 'specialista',  'data_creazione',)
-
-    def save_model(self, request, obj, form, change):
-        obj.specialista = request.user
-        obj.save()
-
-    def get_actions(self, request):
-        actions = super().get_actions(request)
-        if 'delete_selected' in actions:
-            del actions['delete_selected']
-        return actions
-
-
-"""
 
 
 

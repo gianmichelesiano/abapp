@@ -10,8 +10,12 @@ import datetime
 
 @register(ConteggioOrario)
 class MaterialConteggioOrarioAdmin(MaterialModelAdmin):
+
+    def Data_Creazione(self, obj):
+        return obj.data_creazione.strftime("%d-%m-%Y")
+
     exclude  = ['specialista']
-    list_display = ('data_creazione', 'specialista', 'ore',)
+    list_display = ('Data_Creazione', 'specialista', 'ore',)
     icon_name = 'add_alarm'
     list_filter = ( 'data_creazione',)
     list_per_page = 25

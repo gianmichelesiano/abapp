@@ -7,6 +7,9 @@ class DataFile(models.Model):
     data_creazione = models.DateTimeField(default=timezone.now)
     data = models.FileField()
 
+
+
+
     class Meta:
         verbose_name = 'Documento'
         verbose_name_plural = 'Documenti'
@@ -14,3 +17,6 @@ class DataFile(models.Model):
     def save(self, *args, **kwargs):
         super(DataFile, self).save(*args, **kwargs)
         filename = self.data.url
+
+
+        

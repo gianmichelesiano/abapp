@@ -10,7 +10,10 @@ from .form import RelazioniForm
 
 @register(Relazioni)
 class MaterialRelazioneAdmin(MaterialModelAdmin):
-    list_display = ('specialista', 'data_creazione','relazione')
+    def Data_Creazione(self, obj):
+        return obj.data_creazione.strftime("%d-%m-%Y")
+
+    list_display = ('specialista', 'Data_Creazione','relazione')
     form = RelazioniForm
     icon_name = 'crop_portrait'
 
@@ -27,7 +30,11 @@ class MaterialRelazioneAdmin(MaterialModelAdmin):
 
 @register(AnalisiFunzionali)
 class MaterialAnalisiFunzionaleAdmin(MaterialModelAdmin):
-    list_display = ('specialista', 'data_creazione','comportamento',)
+
+    def Data_Creazione(self, obj):
+        return obj.data_creazione.strftime("%d-%m-%Y")
+
+    list_display = ('specialista', 'Data_Creazione','comportamento',)
     icon_name = 'warning'
 
     exclude  = ['specialista']
