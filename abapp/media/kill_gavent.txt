@@ -1,3 +1,0 @@
-netstat -ano | findstr :5000
-leggere il numero del PID
-taskkill /PID 1140 /F
